@@ -1,0 +1,4 @@
+.LandingView {
+    display: flex;
+    flex-direction: column;
+}
