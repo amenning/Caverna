@@ -1,0 +1,9 @@
+.CoverBox {
+    display: flex;
+    align-items: center;
+}
+
+.CoverBox img {
+    margin: auto;
+    max-width: 40%;
+}

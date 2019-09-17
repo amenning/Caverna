@@ -5,6 +5,7 @@ import classes from './App.css';
 
 import Layout from './hoc/Layout/Layout';
 import GameSetup from './containers/GameSetup/GameSetup';
+import LandingView from './containers/LandingView/LandingView';
 
 class App extends Component {
   render() {
@@ -12,8 +13,8 @@ class App extends Component {
       <div className={classes.App}>
         <Layout>
           <Switch>
-            {/* <Route path="/game" component={Game} */}
-            <Route path="/" exact component={GameSetup} />
+            <Route path="/gameSetup" exact component={GameSetup} />
+            <Route path="/" component={LandingView} />
           </Switch>
         </Layout>
       </div>
