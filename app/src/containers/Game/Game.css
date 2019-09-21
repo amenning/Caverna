@@ -1,0 +1,18 @@
+.Game {
+    display: flex;
+    flex-direction: column;
+}
+
+.ActionBoard {
+    margin-bottom: 40px;
+}
+
+.CentralDisplay {
+    display: flex;
+    flex-direction: row;
+}
+
+.AvailableRoomTiles {
+    min-width: 40%;
+    max-width: 60%;
+}
