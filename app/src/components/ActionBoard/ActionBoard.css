@@ -1,0 +1,11 @@
+.ActionBoard {
+    display: flex;
+    align-items: center;
+}
+
+.ActionBoard img {
+    margin: auto;
+    max-width: 70%;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
+}

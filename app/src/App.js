@@ -5,6 +5,7 @@ import classes from './App.css';
 
 import Layout from './hoc/Layout/Layout';
 import GameSetup from './containers/GameSetup/GameSetup';
+import Game from './containers/Game/Game';
 import LandingView from './containers/LandingView/LandingView';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path="/gameSetup" exact component={GameSetup} />
+            <Route path="/game" exact component={Game} />
             <Route path="/" component={LandingView} />
           </Switch>
         </Layout>

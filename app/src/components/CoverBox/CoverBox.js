@@ -9,7 +9,7 @@ class CoverBox extends Component {
     return (
       <Aux>
         <div className={classes.CoverBox}>
-            <img src={coverBox} alt="MyBurger" />
+            <img src={coverBox} alt="Cover Box" />
         </div>
       </Aux>
     );

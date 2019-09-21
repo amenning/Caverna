@@ -20,7 +20,7 @@ class LandingView extends Component {
       <Aux>
         <div className={classes.LandingView}>
             <CoverBox />
-            <Button btnType="Success" clicked={() => this.nextPath('/GameSetup')}>Play</Button>
+            <Button btnType="Success" clicked={() => this.nextPath('/Game')}>Play</Button>
         </div>
       </Aux>
     );
