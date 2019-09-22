@@ -114,6 +114,15 @@
 
 }
 
+.WoodMarker {
+    position: absolute;
+    width: 40%;
+    top: 61%;
+    left: 88%;
+    filter: brightness(2);
+
+}
+
 .HorizontalSpacer {
     min-width: 10%;
 }
