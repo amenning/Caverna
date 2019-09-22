@@ -123,6 +123,20 @@
 
 }
 
+.FoodMarker {
+    position: absolute;
+    width: 60%;
+    top: 56%;
+    left: 75%;
+}
+
+.GoldMarker {
+    position: absolute;
+    width: 60%;
+    top: 56%;
+    left: 85%;
+}
+
 .HorizontalSpacer {
     min-width: 10%;
 }
