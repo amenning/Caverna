@@ -90,6 +90,14 @@
     left: 58%;
 }
 
+.FlaxMarker {
+    position: absolute;
+    width: 40%;
+    top: 60%;
+    left: 70%;
+
+}
+
 .HorizontalSpacer {
     min-width: 10%;
 }

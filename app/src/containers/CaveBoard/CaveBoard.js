@@ -5,6 +5,8 @@ import Aux from '../../hoc/Aux/Aux';
 import caveBoard from '../../assets/images/CaveBoard/CaveBoard.jpg';
 import RoomTile from '../../components/RoomTile/RoomTile';
 import grayRoomTileBack from '../../assets/images/RoomTiles/DarkGrayRoomTileBacks.jpg';
+import ResourceMarker from '../../components/ResourceMarker/ResourceMarker';
+import flaxImage from '../../assets/images/ResourceMarker/Flax.png';
 
 /**
  * The cave board room tile placement numbers are as follows:
@@ -52,6 +54,9 @@ class CaveBoard extends Component {
             </div>
             <div className={classes.RoomTileTen}>
                 <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+            </div>
+            <div className={classes.FlaxMarker}>
+                <ResourceMarker resourceMarkerImage={flaxImage} resourceMarkerImageAlt='flax' />
             </div>
         </div>
         <div className={classes.HorizontalSpacer}></div>

@@ -1,0 +1,9 @@
+.ResourceMarker {
+    display: flex;
+    align-items: center;
+}
+
+.ResourceMarker img {
+    min-width: 10%;
+    max-width: 15%;
+}
