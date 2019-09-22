@@ -98,6 +98,14 @@
 
 }
 
+.EmmerMarker {
+    position: absolute;
+    width: 40%;
+    top: 61%;
+    left: 76%;
+
+}
+
 .HorizontalSpacer {
     min-width: 10%;
 }
