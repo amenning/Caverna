@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import classes from './Game.css';
 import Aux from '../../hoc/Aux/Aux';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import ActionBoard from '../../components/ActionBoard/ActionBoard';
-import CaveBoard from '../../components/CaveBoard/CaveBoard';
+import ActionBoard from '../ActionBoard/ActionBoard';
+import CaveBoard from '../CaveBoard/CaveBoard';
+import AvailableRoomTiles from '../AvailableRoomTiles/AvailableRoomTiles';
 
 class Game extends Component {
   state = {}
@@ -22,6 +23,7 @@ class Game extends Component {
             </div>
             <div className={classes.CentralDisplay}>
                 <div className={classes.AvailableRoomTiles}>
+                    <AvailableRoomTiles />
                 </div>
                 <CaveBoard />
             </div>
