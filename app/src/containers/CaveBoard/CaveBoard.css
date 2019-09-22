@@ -1,12 +1,95 @@
 .CaveBoard {
     display: flex;
     align-items: center;
-}
-
-.CaveBoard img {
-    margin: auto;
-    min-width: 40%;
-    max-width: 60%;
+    background: url("../../assets/images/CaveBoard/CaveBoard.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
     border-radius: 5px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.CaveBoardBackgroundResponsiveImage {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.RoomTileOne {
+    position: absolute;
+    width: 40%;
+    top: 9%;
+    left: 5%;
+}
+
+.RoomTileTwo {
+    position: absolute;
+    width: 40%;
+    top: 9%;
+    left: 31%;
+}
+
+.RoomTileThree {
+    position: absolute;
+    width: 40%;
+    top: 26%;
+    left: 5%;
+}
+
+.RoomTileFour {
+    position: absolute;
+    width: 40%;
+    top: 26%;
+    left: 31%;
+}
+
+.RoomTileFive {
+    position: absolute;
+    width: 40%;
+    top: 44%;
+    left: 5%;
+}
+
+.RoomTileSix {
+    position: absolute;
+    width: 40%;
+    top: 44%;
+    left: 31%;
+}
+
+.RoomTileSeven {
+    position: absolute;
+    width: 40%;
+    top: 62%;
+    left: 31%;
+}
+
+.RoomTileEight {
+    position: absolute;
+    width: 40%;
+    top: 79%;
+    left: 5%;
+}
+
+.RoomTileNine {
+    position: absolute;
+    width: 40%;
+    top: 79%;
+    left: 31%;
+}
+
+.RoomTileTen {
+    position: absolute;
+    width: 40%;
+    top: 79%;
+    left: 58%;
+}
+
+.HorizontalSpacer {
+    min-width: 10%;
 }
