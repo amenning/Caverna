@@ -8,6 +8,7 @@ import grayRoomTileBack from '../../assets/images/RoomTiles/DarkGrayRoomTileBack
 import ResourceMarker from '../../components/ResourceMarker/ResourceMarker';
 import flaxImage from '../../assets/images/ResourceMarker/Flax.png';
 import emmerImage from '../../assets/images/ResourceMarker/Emmer.png';
+import stoneImage from '../../assets/images/ResourceMarker/Stone.png';
 
 /**
  * The cave board room tile placement numbers are as follows:
@@ -61,6 +62,9 @@ class CaveBoard extends Component {
             </div>
             <div className={classes.EmmerMarker}>
                 <ResourceMarker resourceMarkerImage={emmerImage} resourceMarkerImageAlt='emmer' />
+            </div>
+            <div className={classes.StoneMarker}>
+                <ResourceMarker resourceMarkerImage={stoneImage} resourceMarkerImageAlt='stone' />
             </div>
         </div>
         <div className={classes.HorizontalSpacer}></div>

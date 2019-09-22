@@ -106,6 +106,14 @@
 
 }
 
+.StoneMarker {
+    position: absolute;
+    width: 40%;
+    top: 60.5%;
+    left: 82%;
+
+}
+
 .HorizontalSpacer {
     min-width: 10%;
 }
