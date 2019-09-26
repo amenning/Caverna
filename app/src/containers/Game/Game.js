@@ -19,13 +19,14 @@ class Game extends Component {
       <Aux>
         <div className={classes.Game}>
             <div className={classes.ActionBoard}>
-                <ActionBoard />
+              <ActionBoard />
             </div>
             <div className={classes.CentralDisplay}>
-                <div className={classes.AvailableRoomTiles}>
-                    <AvailableRoomTiles />
-                </div>
-                <CaveBoard />
+              <div className={classes.VerticalSpacer}></div>
+              <AvailableRoomTiles />
+              <div className={classes.VerticalSpacer}></div>
+              <CaveBoard />
+              <div className={classes.VerticalSpacer}></div>
             </div>
         </div>
       </Aux>

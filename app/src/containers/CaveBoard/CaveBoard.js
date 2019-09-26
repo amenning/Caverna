@@ -25,7 +25,6 @@ class CaveBoard extends Component {
   render () {
     return (
       <Aux>
-        <div className={classes.HorizontalSpacer}></div>
         <div className={classes.CaveBoard}>
             <div>
                 <img src={caveBoard} alt="Player Cave Board" className={classes.CaveBoardBackgroundResponsiveImage} />
@@ -79,7 +78,6 @@ class CaveBoard extends Component {
                 <ResourceMarker resourceMarkerImage={goldImage} resourceMarkerImageAlt='gold' />
             </div>
         </div>
-        <div className={classes.HorizontalSpacer}></div>
       </Aux>
     );
   }

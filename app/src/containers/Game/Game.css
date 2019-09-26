@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.VerticalSpacer {
+    min-width: 10%;
+}
+
 .ActionBoard {
     margin-bottom: 40px;
 }
@@ -13,6 +17,5 @@
 }
 
 .AvailableRoomTiles {
-    min-width: 40%;
-    max-width: 60%;
+
 }
