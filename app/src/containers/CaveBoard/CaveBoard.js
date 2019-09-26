@@ -43,7 +43,7 @@ class CaveBoard extends Component {
                 <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
             </div>
             <div className={classes.RoomTileFive}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+                {/* Starts Empty */}
             </div>
             <div className={classes.RoomTileSix}>
                 <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
