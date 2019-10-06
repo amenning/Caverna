@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import classes from './AvailableRoomTiles.css';
-import availableRoomTilesBackground from '../../assets/images/CaveBoard/CaveBoard.jpg';
+import availableRoomTilesBackground from '../../assets/images/AvailableTileBoard/AvailableTileBoard.png';
 import Aux from '../../hoc/Aux/Aux';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import RoomTile from '../../components/RoomTile/RoomTile';

@@ -1,7 +1,7 @@
 .AvailableRoomTiles {
     display: flex;
     align-items: center;
-    background: url("../../assets/images/CaveBoard/CaveBoard.jpg") no-repeat center center;
+    background: url("../../assets/images/AvailableTileBoard/AvailableTileBoard.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
