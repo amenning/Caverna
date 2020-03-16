@@ -1,10 +1,11 @@
 {
-  "name": "burger-builder",
+  "name": "caverna",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.1.6",
     "@svgr/webpack": "2.4.1",
+    "axios": "0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
@@ -44,7 +45,9 @@
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.7.0",
+    "react-redux": "5.0.6",
     "react-router-dom": "^4.3.1",
+    "redux": "4.0.1",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -53,10 +56,7 @@
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3",
-    "axios": "0.18.0",
-    "redux": "4.0.1",
-    "react-redux": "5.0.6"
+    "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -116,6 +116,23 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-json-strings",
+      "@babel/plugin-transform-named-capturing-groups-regex",
+      "@babel/plugin-transform-react-jsx",
+      "@babel/plugin-transform-react-jsx-source",
+      "@babel/plugin-transform-react-jsx-self",
+      "babel-plugin-transform-class-properties"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-json-strings": "^7.8.3",
+    "@babel/plugin-transform-named-capturing-groups-regex": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "@babel/plugin-transform-react-jsx-self": "^7.8.3",
+    "@babel/plugin-transform-react-jsx-source": "^7.8.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack-cli": "^3.3.11"
   }
 }

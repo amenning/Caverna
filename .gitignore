@@ -24,6 +24,7 @@
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+.gradle
 build
 
 # Gradle and Maven with auto-import
@@ -194,3 +195,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+ReactBuilds
+src/main/resources/static

@@ -2,7 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.1.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id "com.moowork.node" version "1.3.1"
 }
+
+apply plugin: "com.moowork.node"
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -28,3 +31,25 @@ test {
         logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
     }
 }
+
+node {
+    workDir = file("./app")
+    nodeModulesDir = file("./app")
+}
+
+task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
+    script = project.file('./app/node_modules/.bin/webpack')
+    args = [
+            '--mode', 'development',
+            '--entry', './src/index.js',
+            '-o', '../src/main/resources/static/caverna.js',
+            '--config', './webpack.config.js'
+    ]
+    execOverrides {
+        it.workingDir = file('./app')
+    }
+}
+
+processResources.dependsOn 'buildReactApp'
+clean.delete << file('./app/node_modules')
+clean.delete << file('src/main/resources/static')
