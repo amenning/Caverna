@@ -9,12 +9,6 @@ const withErrorHandler = (WrappedComponent) => {
       error: null
     }
 
-    componentWillMount () {
-    }
-
-    componentWillUnmount () {
-    }
-
     errorConfirmedHandler = () => {
       this.setState({error: null});
     }

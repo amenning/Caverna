@@ -11,9 +11,6 @@ import AvailableRoomTiles from '../AvailableRoomTiles/AvailableRoomTiles';
 class Game extends Component {
   state = {}
 
-  componentDidMount () {
-  }
-
   render () {
     return (
       <Aux>

@@ -7,9 +7,6 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 class GameSetup extends Component {
   state = {}
 
-  componentDidMount () {
-  }
-
   render () {
     return (
       <Aux>
