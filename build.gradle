@@ -50,6 +50,7 @@ task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
     }
 }
 
-processResources.dependsOn 'buildReactApp'
+processResources.dependsOn buildReactApp
 clean.delete << file('./app/node_modules')
 clean.delete << file('src/main/resources/static')
+build.dependsOn buildReactApp
