@@ -5,7 +5,11 @@
 
 .ActionTile img {
     min-width: 10%;
-    max-width: 15%;
+    max-width: 80%;
     border-radius: 5px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
+}
+
+.ActionTile:hover {
+    transform: scale(3);
 }

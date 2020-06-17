@@ -24,77 +24,121 @@
 
 .ActionTileOne {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 10%;
 }
 
+.ActionTileOne:hover {
+    z-index: 1000;
+}
+
 .ActionTileTwo {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 18%;
 }
 
+.ActionTileTwo:hover {
+    z-index: 1000;
+}
+
 .ActionTileThree {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 26%;
 }
 
+.ActionTileThree:hover {
+    z-index: 1000;
+}
+
 .ActionTileFour {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 34%;
 }
 
+.ActionTileFour:hover {
+    z-index: 1000;
+}
+
 .ActionTileFive {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 43%;
 }
 
+.ActionTileFive:hover {
+    z-index: 1000;
+}
+
 .ActionTileSix {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 50.5%;
 }
 
+.ActionTileSix:hover {
+    z-index: 1000;
+}
+
 .ActionTileSeven {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 58%;
 }
 
+.ActionTileSeven:hover {
+    z-index: 1000;
+}
+
 .ActionTileEight {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 68%;
 }
 
+.ActionTileEight:hover {
+    z-index: 1000;
+}
+
 .ActionTileNine {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 75.5%;
 }
 
+.ActionTileNine:hover {
+    z-index: 1000;
+}
+
 .ActionTileTen {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 83%;
 }
 
+.ActionTileTen:hover {
+    z-index: 1000;
+}
+
 .ActionTileEleven {
     position: absolute;
-    width: 40%;
+    width: 8%;
     top: 15%;
     left: 92%;
+}
+
+.ActionTileEleven:hover {
+    z-index: 1000;
 }

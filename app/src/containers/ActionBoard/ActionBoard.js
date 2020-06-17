@@ -4,10 +4,12 @@ import classes from './ActionBoard.css';
 import Aux from '../../hoc/Aux/Aux';
 import actionBoardOnePlayer from '../../assets/images/ActionBoard/ActionBoardOnePlayer.jpg';
 import ActionTile from '../../components/ActionTile/ActionTile';
+
 import startingActionTileBack from '../../assets/images/ActionTiles/StartingActionTileBack.png';
 import groupTwoActionTileBack from '../../assets/images/ActionTiles/GroupTwoActionTileBack.png';
 import groupThreeActionTileBack from '../../assets/images/ActionTiles/GroupThreeActionTileBack.png';
 import groupFourActionTileBack from '../../assets/images/ActionTiles/GroupFourActionTileBack.png';
+import houseworkActionTile from '../../assets/images/ActionTiles/HouseworkActionTile.jpg';
 
 
 class ActionBoard extends Component {
@@ -20,7 +22,7 @@ class ActionBoard extends Component {
               <img src={actionBoardOnePlayer} alt="Action Board For One Player" className={classes.ActionBoardBackgroundResponsiveImage} />
           </div>
           <div className={classes.ActionTileOne}>
-              <ActionTile actionTileImage={startingActionTileBack} actionTileImageAlt='test' />
+              <ActionTile actionTileImage={houseworkActionTile} actionTileImageAlt='test' />
           </div>
           <div className={classes.ActionTileTwo}>
             <ActionTile actionTileImage={startingActionTileBack} actionTileImageAlt='test' />
