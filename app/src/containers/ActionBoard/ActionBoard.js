@@ -6,11 +6,10 @@ import actionBoardOnePlayer from '../../assets/images/ActionBoard/ActionBoardOne
 import ActionTile from '../../components/ActionTile/ActionTile';
 
 // Starting Action Tiles
-import startingActionTileBack from '../../assets/images/ActionTiles/StartingActionTileBack.png';
-import houseworkActionTile from '../../assets/images/ActionTiles/HouseworkActionTile.jpg';
-import undergrowthActionTile from '../../assets/images/ActionTiles/UndergrowthActionTile.jpg';
-import cultivationActionTile from '../../assets/images/ActionTiles/CultivationActionTile.jpg';
-import excavationActionTile from '../../assets/images/ActionTiles/ExcavationActionTile.jpg';
+import CultivationActionTile from '../../components/ActionTile/CultivationActionTile';
+import HouseworkActionTile from '../../components/ActionTile/HouseworkActionTile';
+import UndergrowthActionTile from '../../components/ActionTile/UndergrowthActionTile';
+import ExcavationActionTile from '../../components/ActionTile/ExcavationActionTile';
 
 import groupTwoActionTileBack from '../../assets/images/ActionTiles/GroupTwoActionTileBack.png';
 import masonryActionTile from '../../assets/images/ActionTiles/MasonryActionTile.jpg';
@@ -33,19 +32,19 @@ class ActionBoard extends Component {
         <div className={classes.HorizontalSpacer}></div>
         <div className={classes.ActionBoard}>
           <div>
-              <img src={actionBoardOnePlayer} alt="Action Board For One Player" className={classes.ActionBoardBackgroundResponsiveImage} />
+            <img src={actionBoardOnePlayer} alt="Action Board For One Player" className={classes.ActionBoardBackgroundResponsiveImage} />
           </div>
           <div className={classes.ActionTileOne}>
-              <ActionTile actionTileImage={houseworkActionTile} actionTileImageAlt='housework' />
+            <HouseworkActionTile />
           </div>
           <div className={classes.ActionTileTwo}>
-            <ActionTile actionTileImage={undergrowthActionTile} actionTileImageAlt='undergrowth' />
+            <UndergrowthActionTile />
           </div>
           <div className={classes.ActionTileThree}>
-            <ActionTile actionTileImage={cultivationActionTile} actionTileImageAlt='cultivation' />
+            <CultivationActionTile />
           </div>
           <div className={classes.ActionTileFour}>
-            <ActionTile actionTileImage={excavationActionTile} actionTileImageAlt='excavation' />
+            <ExcavationActionTile />
           </div>
           <div className={classes.ActionTileFive}>
               <ActionTile actionTileImage={masonryActionTile} actionTileImageAlt='masonry' />

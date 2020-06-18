@@ -97,7 +97,6 @@ class ResourceTrack extends Component {
   }
 }
 
-
 const mapStateToProps = state => {
   return {
     resources: state.resources
@@ -108,6 +107,5 @@ const mapDispatchToProps = dispatch => {
   return {
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResourceTrack);
