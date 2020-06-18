@@ -6,7 +6,7 @@ import caveBoard from '../../assets/images/CaveBoard/CaveBoard.jpg';
 import RoomTile from '../../components/RoomTile/RoomTile';
 import grayRoomTileBack from '../../assets/images/RoomTiles/DarkGrayRoomTileBacks.jpg';
 
-import ResourceTrack from './ResourceTrack';
+import ResourceTrack from '../ResourceTrack/ResourceTrack';
 
 /**
  * The cave board room tile placement numbers are as follows:

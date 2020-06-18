@@ -1,0 +1,80 @@
+.FlaxMarker {
+    position: absolute;
+    width: 6%;
+    left: 69%;
+
+}
+
+.EmmerMarker {
+    position: absolute;
+    width: 8%;
+    left: 73%;
+
+}
+
+.StoneMarker {
+    position: absolute;
+    width: 8%;
+    left: 78%;
+
+}
+
+.WoodMarker {
+    position: absolute;
+    width: 8%;
+    left: 83%;
+    filter: brightness(2);
+
+}
+
+.FoodMarker {
+    position: absolute;
+    width: 12%;
+    left: 93%;
+}
+
+.GoldMarker {
+    position: absolute;
+    width: 12%;
+    left: 87%;
+}
+
+.ZeroResource {
+    top: 69%;
+}
+
+.OneResource {
+    top: 61%;
+}
+
+.TwoResource {
+    top: 51%;
+}
+
+.ThreeResource {
+    top: 44%;
+}
+
+.FourResource {
+    top: 37%;
+}
+
+.FiveResource {
+    top: 30%;
+}
+
+.SixResource {
+    top: 23%;
+}
+
+.SevenResource {
+    top: 16%;
+}
+
+.EightResource {
+    top: 9%;
+}
+
+.NineResource {
+    top: 2%;
+}
