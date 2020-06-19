@@ -8,7 +8,10 @@ const initialState = {
         gold: 1,
         stone: 1,
         wood: 1
-    }
+    },
+    status: {
+        message: "Welcome to Caverna - Solo Mode.\nPlease click on any action tile to begin round 1 of 7"
+    },
 };
 
 const reducer = (state = initialState, action) => {

@@ -7,6 +7,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import ActionBoard from '../ActionBoard/ActionBoard';
 import CaveBoard from '../CaveBoard/CaveBoard';
 import AvailableRoomTiles from '../AvailableRoomTiles/AvailableRoomTiles';
+import StatusBar from '../StatusBar/StatusBar';
 
 class Game extends Component {
   state = {}
@@ -15,16 +16,19 @@ class Game extends Component {
     return (
       <Aux>
         <div className={classes.Game}>
-            <div className={classes.ActionBoard}>
-              <ActionBoard />
-            </div>
-            <div className={classes.CentralDisplay}>
-              <div className={classes.VerticalSpacer}></div>
-              <AvailableRoomTiles />
-              <div className={classes.VerticalSpacer}></div>
-              <CaveBoard />
-              <div className={classes.VerticalSpacer}></div>
-            </div>
+          <div className={classes.StatusBar}>
+            <StatusBar />
+          </div>
+          <div className={classes.ActionBoard}>
+            <ActionBoard />
+          </div>
+          <div className={classes.CentralDisplay}>
+            <div className={classes.VerticalSpacer}></div>
+            <AvailableRoomTiles />
+            <div className={classes.VerticalSpacer}></div>
+            <CaveBoard />
+            <div className={classes.VerticalSpacer}></div>
+          </div>
         </div>
       </Aux>
     );

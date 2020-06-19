@@ -1,0 +1,9 @@
+.StatusBar {
+    display: inline;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    white-space: pre-line;
+}
