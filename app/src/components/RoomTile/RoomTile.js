@@ -7,7 +7,7 @@ class RoomTile extends Component {
   render () {
     return (
       <Aux>
-        <div className={classes.RoomTile}>
+        <div className={classes.RoomTile} onClick={this.props.onClick}>
             <img src={this.props.roomTileImage} alt={this.props.roomTileImageAlt} />
         </div>
       </Aux>

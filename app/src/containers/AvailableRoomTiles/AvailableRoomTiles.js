@@ -5,8 +5,7 @@ import classes from './AvailableRoomTiles.css';
 import availableRoomTilesBackground from '../../assets/images/AvailableTileBoard/AvailableTileBoard.png';
 import Aux from '../../hoc/Aux/Aux';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import RoomTile from '../../components/RoomTile/RoomTile';
-import grayRoomTileBack from '../../assets/images/RoomTiles/DarkGrayRoomTileBacks.jpg';
+import FoodCornerRoomTile from '../../components/RoomTile/FoodCornerRoomTile';
 
 class AvailableRoomTiles extends Component {
   render () {
@@ -17,7 +16,7 @@ class AvailableRoomTiles extends Component {
               <img src={availableRoomTilesBackground} alt="Available Tiles Background" className={classes.AvailableRoomTilesBackgroundResponsiveImage} />
           </div>
           <div className={classes.RoomTileOne}>
-            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+            <FoodCornerRoomTile />
           </div>
         </div>
       </Aux>

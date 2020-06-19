@@ -16,6 +16,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        // Action Tiles
         case actionTypes.CULTIVATE:
             return {
               ...state,
@@ -41,6 +42,17 @@ const reducer = (state = initialState, action) => {
                 wood: (state.resources['wood'] + 2 >= 9 ? 9 : state.resources['wood'] + 2)
               }
             };
+
+        // Room Tiles
+        case actionTypes.FOOD_CORNER:
+            return {
+              ...state,
+              resources: {
+                ...state.resources,
+                food: (state.resources['food'] < 3 ? 3 : state.resources['food'])
+              }
+            };
+
         default:
             return state;
     }
