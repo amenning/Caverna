@@ -1,27 +1,27 @@
 .FlaxMarker {
     position: absolute;
-    width: 6%;
+    width: 4%;
     left: 69%;
 
 }
 
 .EmmerMarker {
     position: absolute;
-    width: 8%;
+    width: 6%;
     left: 73%;
 
 }
 
 .StoneMarker {
     position: absolute;
-    width: 8%;
+    width: 5%;
     left: 78%;
 
 }
 
 .WoodMarker {
     position: absolute;
-    width: 8%;
+    width: 6%;
     left: 83%;
     filter: brightness(2);
 
@@ -29,13 +29,13 @@
 
 .FoodMarker {
     position: absolute;
-    width: 12%;
+    width: 8%;
     left: 93%;
 }
 
 .GoldMarker {
     position: absolute;
-    width: 12%;
+    width: 8%;
     left: 87%;
 }
 
