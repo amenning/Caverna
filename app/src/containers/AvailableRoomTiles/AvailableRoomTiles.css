@@ -19,9 +19,24 @@
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
     opacity: 0;
 }
+
 .RoomTileOne {
     position: absolute;
     width: 24%;
     top: 9%;
     left: 5%;
+}
+
+.RoomTileTwo {
+    position: absolute;
+    width: 24%;
+    top: 9%;
+    left: 35%;
+}
+
+.RoomTileThree {
+    position: absolute;
+    width: 24%;
+    top: 9%;
+    left: 65%;
 }

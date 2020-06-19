@@ -52,6 +52,19 @@ const reducer = (state = initialState, action) => {
                 food: (state.resources['food'] < 3 ? 3 : state.resources['food'])
               }
             };
+        case actionTypes.PARLOR:
+            return {
+              ...state,
+              resources: {
+                ...state.resources,
+                emmer: (state.resources['emmer'] < 1 ? 1 : state.resources['emmer']),
+                flax: (state.resources['flax'] < 1 ? 1 : state.resources['flax']),
+                food: (state.resources['food'] < 1 ? 1 : state.resources['food']),
+                gold: (state.resources['gold'] < 1 ? 1 : state.resources['gold']),
+                stone: (state.resources['stone'] < 1 ? 1 : state.resources['stone']),
+                wood: (state.resources['wood'] < 1 ? 1 : state.resources['wood']),
+              }
+            };
 
         default:
             return state;

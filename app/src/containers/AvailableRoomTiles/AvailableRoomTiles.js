@@ -5,7 +5,10 @@ import classes from './AvailableRoomTiles.css';
 import availableRoomTilesBackground from '../../assets/images/AvailableTileBoard/AvailableTileBoard.png';
 import Aux from '../../hoc/Aux/Aux';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+
 import FoodCornerRoomTile from '../../components/RoomTile/FoodCornerRoomTile';
+import GrindstoneRoomTile from '../../components/RoomTile/GrindstoneRoomTile';
+import ParlorRoomTile from '../../components/RoomTile/ParlorRoomTile';
 
 class AvailableRoomTiles extends Component {
   render () {
@@ -17,6 +20,12 @@ class AvailableRoomTiles extends Component {
           </div>
           <div className={classes.RoomTileOne}>
             <FoodCornerRoomTile />
+          </div>
+          <div className={classes.RoomTileTwo}>
+            <GrindstoneRoomTile />
+          </div>
+          <div className={classes.RoomTileThree}>
+            <ParlorRoomTile />
           </div>
         </div>
       </Aux>
