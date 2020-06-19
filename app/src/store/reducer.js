@@ -89,6 +89,15 @@ const reducer = (state = initialState, action) => {
           wood: (state.resources['wood'] < 2 ? 2 : state.resources['wood']),
         }
       };
+    case actionTypes.TUNNEL:
+      return {
+        ...state,
+        resources: {
+          ...state.resources,
+          food: (state.resources['food'] + 2 >= 9 ? 9 : state.resources['food'] + 2),
+          stone: (state.resources['stone'] < 3 ? state.resources['stone'] + 1 : state.resources['stone']),
+        }
+      };
 
     default:
       return state;

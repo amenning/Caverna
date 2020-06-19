@@ -8,3 +8,5 @@ export const FOOD_CORNER = 'FOOD CORNER';
 export const GRINDSTONE = 'GRINDSTONE';
 export const PARLOR = 'PARLOR';
 export const SHELF = 'SHELF';
+export const SPINNING_WHEEL = 'SPINNING WHEEL';
+export const TUNNEL = 'TUNNEL';

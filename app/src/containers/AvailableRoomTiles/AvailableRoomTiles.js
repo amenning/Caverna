@@ -10,6 +10,8 @@ import FoodCornerRoomTile from '../../components/RoomTile/FoodCornerRoomTile';
 import GrindstoneRoomTile from '../../components/RoomTile/GrindstoneRoomTile';
 import ParlorRoomTile from '../../components/RoomTile/ParlorRoomTile';
 import ShelfRoomTile from '../../components/RoomTile/ShelfRoomTile';
+import SpinningWheelRoomTile from '../../components/RoomTile/SpinningWheelRoomTile';
+import TunnelRoomTile from '../../components/RoomTile/TunnelRoomTile';
 
 class AvailableRoomTiles extends Component {
   render () {
@@ -30,6 +32,12 @@ class AvailableRoomTiles extends Component {
           </div>
           <div className={classes.RoomTileFour}>
             <ShelfRoomTile />
+          </div>
+          <div className={classes.RoomTileFive}>
+            <SpinningWheelRoomTile />
+          </div>
+          <div className={classes.RoomTileSix}>
+            <TunnelRoomTile />
           </div>
         </div>
       </Aux>
