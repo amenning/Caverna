@@ -7,3 +7,4 @@ export const UNDERGROWTH = 'UNDERGROWTH';
 export const FOOD_CORNER = 'FOOD CORNER';
 export const GRINDSTONE = 'GRINDSTONE';
 export const PARLOR = 'PARLOR';
+export const SHELF = 'SHELF';

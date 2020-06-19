@@ -40,3 +40,24 @@
     top: 9%;
     left: 65%;
 }
+
+.RoomTileFour {
+    position: absolute;
+    width: 24%;
+    top: 27%;
+    left: 5%;
+}
+
+.RoomTileFive {
+    position: absolute;
+    width: 24%;
+    top: 27%;
+    left: 35%;
+}
+
+.RoomTileSix {
+    position: absolute;
+    width: 24%;
+    top: 27%;
+    left: 65%;
+}

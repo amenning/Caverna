@@ -9,6 +9,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import FoodCornerRoomTile from '../../components/RoomTile/FoodCornerRoomTile';
 import GrindstoneRoomTile from '../../components/RoomTile/GrindstoneRoomTile';
 import ParlorRoomTile from '../../components/RoomTile/ParlorRoomTile';
+import ShelfRoomTile from '../../components/RoomTile/ShelfRoomTile';
 
 class AvailableRoomTiles extends Component {
   render () {
@@ -26,6 +27,9 @@ class AvailableRoomTiles extends Component {
           </div>
           <div className={classes.RoomTileThree}>
             <ParlorRoomTile />
+          </div>
+          <div className={classes.RoomTileFour}>
+            <ShelfRoomTile />
           </div>
         </div>
       </Aux>
