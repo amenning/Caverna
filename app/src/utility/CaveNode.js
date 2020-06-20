@@ -8,23 +8,23 @@ class CaveNode {
     this.WALL = 'WALL';
   }
 
-  getNodeIndex() {
+  getNodeIndex () {
     return this.nodeIndex;
   }
 
-  addAdjacentNode(node) {
+  addAdjacentNode (node) {
     this.adjacentNodes.push(node);
   }
 
-  getAdjacentNodes() {
+  getAdjacentNodes () {
     return this.adjacentNodes;
   }
 
-  isNodeOccupied() {
+  isNodeOccupied () {
     return this.isOccupied;
   }
 
-  markOccupied() {
+  markOccupied () {
     this.isOccupied = true;
   }
 }

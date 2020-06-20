@@ -1,11 +1,11 @@
 import CaveNode from './CaveNode';
 
 class CaveWallNode extends CaveNode {
-  addAdjacentRoomNode(node) {
+  addAdjacentRoomNode (node) {
     this.addAdjacentNode(node);
   }
 
-  getNodeType() {
+  getNodeType () {
     return this.WALL;
   }
 }
