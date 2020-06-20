@@ -1,16 +1,18 @@
 import CaveRoomNode from './CaveRoomNode';
 import CaveWallNode from './CaveWallNode';
+import Queue from './Queue';
 
 class CaveGraph {
-  constructor() {
+  constructor () {
     this.caveNodes = new Map();
+    this.entranceCaveRoomIndex = 24;
     this.createCaveNodes();
     this.associatedRoomNodesWithWallNodes();
     this.markExistingWalls();
     this.markRoomsStartingFilledWithRocks();
   }
 
-  createCaveNodes() {
+  createCaveNodes () {
     const caveWallNodeIndexes = [
       0, 1,
       2, 4, 6,
@@ -42,7 +44,7 @@ class CaveGraph {
     }
   }
 
-  associatedRoomNodesWithWallNodes() {
+  associatedRoomNodesWithWallNodes () {
     this.caveRoomWallIndexMap = new Map();
     this.caveRoomWallIndexMap.set(3, [0, 2, 4, 7]);
     this.caveRoomWallIndexMap.set(5, [1, 4, 6, 8]);
@@ -65,7 +67,7 @@ class CaveGraph {
     }
   }
 
-  markExistingWalls() {
+  markExistingWalls () {
     const permanentWallIndexes = [
       0, 1,
       2, 6,
@@ -82,7 +84,7 @@ class CaveGraph {
     }
   }
 
-  markRoomsStartingFilledWithRocks() {
+  markRoomsStartingFilledWithRocks () {
     const roomsIndexesWithRocks = [
       3, 5,
       10, 12,
@@ -96,17 +98,17 @@ class CaveGraph {
     }
   }
 
-  createCaveRoomNodeForNodeIndex(nodexIndex) {
+  createCaveRoomNodeForNodeIndex (nodexIndex) {
     const caveRoom = new CaveRoomNode(nodexIndex);
     this.caveNodes.set(nodexIndex, caveRoom);
   }
 
-  createCaveWallNodeForNodeIndex(nodexIndex) {
+  createCaveWallNodeForNodeIndex (nodexIndex) {
     const caveWall = new CaveWallNode(nodexIndex);
     this.caveNodes.set(nodexIndex, caveWall);
   }
 
-  associatedRoomNodeIndexWithWallNodeIndexes(roomNodeIndex, wallNodeIndexes) {
+  associatedRoomNodeIndexWithWallNodeIndexes (roomNodeIndex, wallNodeIndexes) {
     let roomNode = this.caveNodes.get(roomNodeIndex);
     for (let wallNodeIndex of wallNodeIndexes) {
       let wallNode = this.caveNodes.get(wallNodeIndex);
@@ -115,11 +117,42 @@ class CaveGraph {
     }
   }
 
-  printGraph() {
+  getRoomNodeIndexesThatCanBeExcavated () {
+    const visitedIndexes = Array(this.caveNodes.size).fill().map((_, i) => false);
+    const roomNodeIndexesThatCanBeExcavated = [];
+
+    const queue = new Queue();
+    let entranceRoom = this.caveNodes.get(this.entranceCaveRoomIndex);
+
+    visitedIndexes[entranceRoom.getNodeIndex] = true;
+    queue.enqueue(entranceRoom);
+
+    while (!queue.isEmpty()) {
+      let currentNode = queue.dequeue();
+
+      let adjacentNodes = currentNode.getAdjacentNodes();
+
+      for (var adjacentNode of adjacentNodes) {
+        if (!visitedIndexes[adjacentNode.getNodeIndex()]) {
+          visitedIndexes[adjacentNode.getNodeIndex()] = true;
+
+          if (!adjacentNode.isNodeOccupied()) {
+            queue.enqueue(adjacentNode);
+          } else if (adjacentNode.getNodeType() == adjacentNode.ROOM) {
+            roomNodeIndexesThatCanBeExcavated.push(adjacentNode.getNodeIndex());
+          }
+        }
+      }
+    }
+
+    return roomNodeIndexesThatCanBeExcavated.sort();
+  }
+
+  printGraph () {
     for (var nodeIndex of this.caveNodes.keys()) {
-      var node = this.caveNodes.get(nodeIndex);
-      var adjacentNodes = node.getAdjacentNodes();
-      var connectionSummary = '';
+      let node = this.caveNodes.get(nodeIndex);
+      let adjacentNodes = node.getAdjacentNodes();
+      let connectionSummary = '';
 
       for (var adjacentNode of adjacentNodes) {
         connectionSummary += ' ' + adjacentNode.getNodeType() + '-' + adjacentNode.getNodeIndex()

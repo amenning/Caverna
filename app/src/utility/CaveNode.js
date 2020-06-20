@@ -4,6 +4,8 @@ class CaveNode {
 
     this.adjacentNodes = [];
     this.isOccupied = false;
+    this.ROOM = 'ROOM';
+    this.WALL = 'WALL';
   }
 
   getNodeIndex() {

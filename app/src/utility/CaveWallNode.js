@@ -6,7 +6,7 @@ class CaveWallNode extends CaveNode {
   }
 
   getNodeType() {
-    return 'WALL';
+    return this.WALL;
   }
 }
 
