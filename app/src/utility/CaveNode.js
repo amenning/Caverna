@@ -1,9 +1,11 @@
+import * as CaveTiles from './CaveTiles';
+
 class CaveNode {
   constructor (nodeIndex) {
     this.nodeIndex = nodeIndex;
 
     this.adjacentNodes = [];
-    this.isOccupied = false;
+    this.nodeTile = CaveTiles.EMPTY_TILE;
     this.ROOM = 'ROOM';
     this.WALL = 'WALL';
   }
@@ -21,11 +23,15 @@ class CaveNode {
   }
 
   isNodeOccupied () {
-    return this.isOccupied;
+    return this.nodeTile != CaveTiles.EMPTY_TILE;
   }
 
-  markOccupied () {
-    this.isOccupied = true;
+  markOccupiedWith (tile) {
+    this.nodeTile = tile;
+  }
+
+  getNodeTileType () {
+    return this.nodeTile;
   }
 }
 

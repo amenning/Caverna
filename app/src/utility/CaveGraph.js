@@ -1,6 +1,7 @@
 import CaveRoomNode from './CaveRoomNode';
 import CaveWallNode from './CaveWallNode';
 import Queue from './Queue';
+import * as CaveTiles from './CaveTiles';
 
 /**
  * This creates a graph of the various cave locations.
@@ -23,15 +24,23 @@ import Queue from './Queue';
 class CaveGraph {
   constructor () {
     this.caveNodes = new Map();
+    this.entranceWallNodeIndex = 23;
     this.entranceCaveRoomIndex = 24;
     this.createCaveNodes();
+
     this.associatedRoomNodesWithWallNodes();
+
     this.markExistingWalls();
     this.markRoomsStartingFilledWithRocks();
+
+    this.caveNodes.get(this.entranceWallNodeIndex)
+      .markOccupiedWith(CaveTiles.CAVE_ENTRANCE_THRESHOLD);
+    this.caveNodes.get(this.entranceCaveRoomIndex)
+      .markOccupiedWith(CaveTiles.CAVE_ENTRANCE_TILE);
   }
 
   createCaveNodes () {
-    const caveWallNodeIndexes = [
+    this.caveWallNodeIndexes = [
       0, 1,
       2, 4, 6,
       7, 8,
@@ -45,11 +54,11 @@ class CaveGraph {
       38, 39, 40
     ];
 
-    for (var caveWallNodeIndex of caveWallNodeIndexes) {
+    for (var caveWallNodeIndex of this.caveWallNodeIndexes) {
       this.createCaveWallNodeForNodeIndex(caveWallNodeIndex);
     }
 
-    const caveRoomNodeIndexes = [
+    this.caveRoomNodeIndexes = [
       3, 5,
       10, 12,
       17, 19,
@@ -57,7 +66,7 @@ class CaveGraph {
       32, 34, 36
     ];
 
-    for (var caveRoomNodeIndex of caveRoomNodeIndexes) {
+    for (var caveRoomNodeIndex of this.caveRoomNodeIndexes) {
       this.createCaveRoomNodeForNodeIndex(caveRoomNodeIndex);
     }
   }
@@ -98,7 +107,7 @@ class CaveGraph {
     ];
 
     for (var wallIndex of permanentWallIndexes) {
-      this.caveNodes.get(wallIndex).markOccupied();
+      this.caveNodes.get(wallIndex).markOccupiedWith(CaveTiles.WALL_TILE);
     }
   }
 
@@ -112,7 +121,7 @@ class CaveGraph {
     ];
 
     for (var roomIndex of roomsIndexesWithRocks) {
-      this.caveNodes.get(roomIndex).markOccupied();
+      this.caveNodes.get(roomIndex).markOccupiedWith(CaveTiles.ROCK_TILE);
     }
   }
 
@@ -156,7 +165,8 @@ class CaveGraph {
 
           if (!adjacentNode.isNodeOccupied()) {
             queue.enqueue(adjacentNode);
-          } else if (adjacentNode.getNodeType() == adjacentNode.ROOM) {
+          } else if (adjacentNode.getNodeType() == adjacentNode.ROOM
+            && adjacentNode.getNodeTileType() == CaveTiles.ROCK_TILE) {
             roomNodeIndexesThatCanBeExcavated.push(adjacentNode.getNodeIndex());
           }
         }
@@ -164,6 +174,43 @@ class CaveGraph {
     }
 
     return roomNodeIndexesThatCanBeExcavated.sort();
+  }
+
+  getRoomNodeIndexesThatAreUnoccupied () {
+    let unoccupiedRoomNodeIndexes = [];
+    let node;
+    for (var nodeIndex of this.caveRoomNodeIndexes) {
+      node = this.caveNodes.get(nodeIndex);
+      if (node.getNodeType() == node.ROOM && !node.isNodeOccupied()) {
+        unoccupiedRoomNodeIndexes.push(node.getNodeIndex());
+      }
+    }
+
+    return unoccupiedRoomNodeIndexes;
+  }
+
+  getWallNodeIndexesThatAreUnoccupied () {
+    let unoccupiedWallNodeIndexes = [];
+    let node;
+    for (var nodeIndex of this.caveWallNodeIndexes) {
+      node = this.caveNodes.get(nodeIndex);
+      if (node.getNodeType() == node.WALL && !node.isNodeOccupied()) {
+        unoccupiedWallNodeIndexes.push(node.getNodeIndex());
+      }
+    }
+
+    return unoccupiedWallNodeIndexes;
+  }
+
+  getOccupancyJson () {
+    const occupancyJson = {};
+    let node;
+    for (var nodeIndex of this.caveNodes.keys()) {
+      node = this.caveNodes.get(nodeIndex);
+      occupancyJson[nodeIndex] = node.getNodeTileType();
+    }
+
+    return occupancyJson;
   }
 
   printGraph () {

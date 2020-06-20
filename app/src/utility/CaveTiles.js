@@ -1,0 +1,6 @@
+export const EMPTY_TILE = 'EMPTY TILE';
+export const ROCK_TILE = 'ROCK TILE';
+export const WALL_TILE = 'WALL TILE';
+
+export const CAVE_ENTRANCE_THRESHOLD = 'CAVE ENTRANCE THRESHOLD';
+export const CAVE_ENTRANCE_TILE = 'CAVE ENTRANCE';
