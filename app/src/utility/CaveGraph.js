@@ -66,11 +66,34 @@ class CaveGraph {
     40: CaveTiles.WALL_TILE
   }
 
+  caveWallNodeIndexes = [
+    0, 1,
+    2, 4, 6,
+    7, 8,
+    9, 11, 13,
+    14, 15,
+    16, 18, 20,
+    21, 22,
+    23, 25, 27,
+    28, 29, 30,
+    31, 33, 35, 37,
+    38, 39, 40
+  ]
+
+  caveRoomNodeIndexes = [
+    3, 5,
+    10, 12,
+    17, 19,
+    24, 26,
+    32, 34, 36
+  ]
+
+  entranceWallNodeIndex = 23;
+  entranceCaveRoomIndex = 24;
+
   constructor (occupancyJson) {
     this.occupancyJson = occupancyJson || this.defaultOccupancyJson;
     this.caveNodes = new Map();
-    this.entranceWallNodeIndex = 23;
-    this.entranceCaveRoomIndex = 24;
 
     this.createCaveNodes();
 
@@ -85,31 +108,9 @@ class CaveGraph {
   }
 
   createCaveNodes () {
-    this.caveWallNodeIndexes = [
-      0, 1,
-      2, 4, 6,
-      7, 8,
-      9, 11, 13,
-      14, 15,
-      16, 18, 20,
-      21, 22,
-      23, 25, 27,
-      28, 29, 30,
-      31, 33, 35, 37,
-      38, 39, 40
-    ];
-
     for (var caveWallNodeIndex of this.caveWallNodeIndexes) {
       this.createCaveWallNodeForNodeIndex(caveWallNodeIndex);
     }
-
-    this.caveRoomNodeIndexes = [
-      3, 5,
-      10, 12,
-      17, 19,
-      24, 26,
-      32, 34, 36
-    ];
 
     for (var caveRoomNodeIndex of this.caveRoomNodeIndexes) {
       this.createCaveRoomNodeForNodeIndex(caveRoomNodeIndex);
