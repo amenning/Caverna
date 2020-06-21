@@ -115,6 +115,57 @@ it('should return the correct node occupancy tile information via JSON', () => {
     });
 })
 
+it('should be able to update occupancy with supplied occupancy JSON', () => {
+  const caveGraph = new CaveGraph();
+  const newOccupancyJson = {
+    0: "EMPTY TILE",
+    1: "EMPTY TILE",
+    2: "EMPTY TILE",
+    3: "ROCK TILE",
+    4: "EMPTY TILE",
+    5: "ROCK TILE",
+    6: "EMPTY TILE",
+    7: "EMPTY TILE",
+    8: "EMPTY TILE",
+    9: "EMPTY TILE",
+    10: "ROCK TILE",
+    11: "EMPTY TILE",
+    12: "ROCK TILE",
+    13: "EMPTY TILE",
+    14: "EMPTY TILE",
+    15: "EMPTY TILE",
+    16: "EMPTY TILE",
+    17: "EMPTY TILE",
+    18: "EMPTY TILE",
+    19: "ROCK TILE",
+    20: "EMPTY TILE",
+    21: "EMPTY TILE",
+    22: "EMPTY TILE",
+    23: "CAVE ENTRANCE THRESHOLD",
+    24: "CAVE ENTRANCE",
+    25: "EMPTY TILE",
+    26: "ROCK TILE",
+    27: "EMPTY TILE",
+    28: "EMPTY TILE",
+    29: "EMPTY TILE",
+    30: "EMPTY TILE",
+    31: "EMPTY TILE",
+    32: "ROCK TILE",
+    33: "EMPTY TILE",
+    34: "ROCK TILE",
+    35: "EMPTY TILE",
+    36: "ROCK TILE",
+    37: "EMPTY TILE",
+    38: "EMPTY TILE",
+    39: "EMPTY TILE",
+    40: "EMPTY TILE",
+  };
+
+  caveGraph.setOccupancyJson(newOccupancyJson);
+
+  expect(caveGraph.getOccupancyJson()).toEqual(newOccupancyJson);
+})
+
 function getNodeTypeCount (caveGraph, nodeType) {
   const nodeTypeTotal = [...caveGraph.caveNodes.keys()].reduce(
     (nodeTypeTotal, nodeIndex) => {

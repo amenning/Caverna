@@ -22,16 +22,61 @@ import * as CaveTiles from './CaveTiles';
  *
  */
 class CaveGraph {
-  constructor () {
+  defaultOccupancyJson = {
+    0: CaveTiles.WALL_TILE,
+    1: CaveTiles.WALL_TILE,
+    2: CaveTiles.WALL_TILE,
+    3: CaveTiles.ROCK_TILE,
+    4: CaveTiles.EMPTY_TILE,
+    5: CaveTiles.ROCK_TILE,
+    6: CaveTiles.WALL_TILE,
+    7: CaveTiles.EMPTY_TILE,
+    8: CaveTiles.EMPTY_TILE,
+    9: CaveTiles.WALL_TILE,
+    10: CaveTiles.ROCK_TILE,
+    11: CaveTiles.EMPTY_TILE,
+    12: CaveTiles.ROCK_TILE,
+    13: CaveTiles.WALL_TILE,
+    14: CaveTiles.EMPTY_TILE,
+    15: CaveTiles.EMPTY_TILE,
+    16: CaveTiles.WALL_TILE,
+    17: CaveTiles.EMPTY_TILE,
+    18: CaveTiles.EMPTY_TILE,
+    19: CaveTiles.ROCK_TILE,
+    20: CaveTiles.WALL_TILE,
+    21: CaveTiles.EMPTY_TILE,
+    22: CaveTiles.EMPTY_TILE,
+    23: CaveTiles.CAVE_ENTRANCE_THRESHOLD,
+    24: CaveTiles.CAVE_ENTRANCE_TILE,
+    25: CaveTiles.EMPTY_TILE,
+    26: CaveTiles.ROCK_TILE,
+    27: CaveTiles.WALL_TILE,
+    28: CaveTiles.EMPTY_TILE,
+    29: CaveTiles.EMPTY_TILE,
+    30: CaveTiles.WALL_TILE,
+    31: CaveTiles.WALL_TILE,
+    32: CaveTiles.ROCK_TILE,
+    33: CaveTiles.EMPTY_TILE,
+    34: CaveTiles.ROCK_TILE,
+    35: CaveTiles.EMPTY_TILE,
+    36: CaveTiles.ROCK_TILE,
+    37: CaveTiles.WALL_TILE,
+    38: CaveTiles.WALL_TILE,
+    39: CaveTiles.WALL_TILE,
+    40: CaveTiles.WALL_TILE
+  }
+
+  constructor (occupancyJson) {
+    this.occupancyJson = occupancyJson || this.defaultOccupancyJson;
     this.caveNodes = new Map();
     this.entranceWallNodeIndex = 23;
     this.entranceCaveRoomIndex = 24;
+
     this.createCaveNodes();
 
     this.associatedRoomNodesWithWallNodes();
 
-    this.markExistingWalls();
-    this.markRoomsStartingFilledWithRocks();
+    this.populateCaveNodesWithTiles(occupancyJson);
 
     this.caveNodes.get(this.entranceWallNodeIndex)
       .markOccupiedWith(CaveTiles.CAVE_ENTRANCE_THRESHOLD);
@@ -94,37 +139,6 @@ class CaveGraph {
     }
   }
 
-  markExistingWalls () {
-    const permanentWallIndexes = [
-      0, 1,
-      2, 6,
-      9, 13,
-      16, 20,
-      27,
-      30,
-      31, 37,
-      38, 39, 40
-    ];
-
-    for (var wallIndex of permanentWallIndexes) {
-      this.caveNodes.get(wallIndex).markOccupiedWith(CaveTiles.WALL_TILE);
-    }
-  }
-
-  markRoomsStartingFilledWithRocks () {
-    const roomsIndexesWithRocks = [
-      3, 5,
-      10, 12,
-      19,
-      26,
-      32, 34, 36
-    ];
-
-    for (var roomIndex of roomsIndexesWithRocks) {
-      this.caveNodes.get(roomIndex).markOccupiedWith(CaveTiles.ROCK_TILE);
-    }
-  }
-
   createCaveRoomNodeForNodeIndex (nodexIndex) {
     const caveRoom = new CaveRoomNode(nodexIndex);
     this.caveNodes.set(nodexIndex, caveRoom);
@@ -141,6 +155,13 @@ class CaveGraph {
       let wallNode = this.caveNodes.get(wallNodeIndex);
       wallNode.addAdjacentRoomNode(roomNode);
       roomNode.addAdjacentWallNode(wallNode);
+    }
+  }
+
+  populateCaveNodesWithTiles () {
+    for (var caveNodeIndex of this.caveNodes.keys()) {
+      this.caveNodes.get(caveNodeIndex)
+        .markOccupiedWith(this.occupancyJson[caveNodeIndex]);
     }
   }
 
@@ -211,6 +232,11 @@ class CaveGraph {
     }
 
     return occupancyJson;
+  }
+
+  setOccupancyJson (occupancyJson) {
+    this.occupancyJson = occupancyJson;
+    this.populateCaveNodesWithTiles();
   }
 
   printGraph () {
