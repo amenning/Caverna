@@ -8,7 +8,7 @@ class ResourceMarker extends Component {
     return (
       <Aux>
         <div className={classes.ResourceMarker}>
-            <img src={this.props.resourceMarkerImage} alt={this.props.resourceMarkerImageAlt} />
+          <img src={this.props.resourceMarkerImage} alt={this.props.resourceMarkerImageAlt} />
         </div>
       </Aux>
     );

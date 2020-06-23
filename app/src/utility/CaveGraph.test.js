@@ -111,7 +111,7 @@ it('should return the correct node occupancy tile information via JSON', () => {
       6: CaveTiles.WALL_TILE,
       7: CaveTiles.EMPTY_TILE,
       8: CaveTiles.EMPTY_TILE,
-      9: CaveTiles.WALL_TILE,
+      9: CaveTiles.WALL_TILE
     });
 })
 
@@ -158,7 +158,7 @@ it('should be able to update occupancy with supplied occupancy JSON', () => {
     37: CaveTiles.EMPTY_TILE,
     38: CaveTiles.EMPTY_TILE,
     39: CaveTiles.EMPTY_TILE,
-    40: CaveTiles.EMPTY_TILE,
+    40: CaveTiles.EMPTY_TILE
   };
 
   caveGraph.setOccupancyJson(newOccupancyJson);

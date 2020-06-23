@@ -10,8 +10,8 @@ const initialState = {
     wood: 1
   },
   status: {
-    message: "Welcome to Caverna - Solo Mode.\nPlease click on any action tile to begin round 1 of 7"
-  },
+    message: 'Welcome to Caverna - Solo Mode.\nPlease click on any action tile to begin round 1 of 7'
+  }
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,8 +22,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          emmer: (state.resources['emmer'] + 2 >= 9 ? 9 : state.resources['emmer'] + 2),
-          flax: (state.resources['flax'] + 1 >= 9 ? 9 : state.resources['flax'] + 1)
+          emmer: (state.resources.emmer + 2 >= 9 ? 9 : state.resources.emmer + 2),
+          flax: (state.resources.flax + 1 >= 9 ? 9 : state.resources.flax + 1)
         }
       };
     case actionTypes.EXCAVATION:
@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          stone: (state.resources['stone'] + 1 >= 9 ? 9 : state.resources['stone'] + 1)
+          stone: (state.resources.stone + 1 >= 9 ? 9 : state.resources.stone + 1)
         }
       };
     case actionTypes.UNDERGROWTH:
@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          wood: (state.resources['wood'] + 2 >= 9 ? 9 : state.resources['wood'] + 2)
+          wood: (state.resources.wood + 2 >= 9 ? 9 : state.resources.wood + 2)
         }
       };
 
@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          food: (state.resources['food'] < 3 ? 3 : state.resources['food'])
+          food: (state.resources.food < 3 ? 3 : state.resources.food)
         }
       };
     case actionTypes.PARLOR:
@@ -57,12 +57,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          emmer: (state.resources['emmer'] < 1 ? 1 : state.resources['emmer']),
-          flax: (state.resources['flax'] < 1 ? 1 : state.resources['flax']),
-          food: (state.resources['food'] < 1 ? 1 : state.resources['food']),
-          gold: (state.resources['gold'] < 1 ? 1 : state.resources['gold']),
-          stone: (state.resources['stone'] < 1 ? 1 : state.resources['stone']),
-          wood: (state.resources['wood'] < 1 ? 1 : state.resources['wood']),
+          emmer: (state.resources.emmer < 1 ? 1 : state.resources.emmer),
+          flax: (state.resources.flax < 1 ? 1 : state.resources.flax),
+          food: (state.resources.food < 1 ? 1 : state.resources.food),
+          gold: (state.resources.gold < 1 ? 1 : state.resources.gold),
+          stone: (state.resources.stone < 1 ? 1 : state.resources.stone),
+          wood: (state.resources.wood < 1 ? 1 : state.resources.wood)
         }
       };
     case actionTypes.PARLOR:
@@ -70,12 +70,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          emmer: (state.resources['emmer'] < 1 ? 1 : state.resources['emmer']),
-          flax: (state.resources['flax'] < 1 ? 1 : state.resources['flax']),
-          food: (state.resources['food'] < 1 ? 1 : state.resources['food']),
-          gold: (state.resources['gold'] < 1 ? 1 : state.resources['gold']),
-          stone: (state.resources['stone'] < 1 ? 1 : state.resources['stone']),
-          wood: (state.resources['wood'] < 1 ? 1 : state.resources['wood']),
+          emmer: (state.resources.emmer < 1 ? 1 : state.resources.emmer),
+          flax: (state.resources.flax < 1 ? 1 : state.resources.flax),
+          food: (state.resources.food < 1 ? 1 : state.resources.food),
+          gold: (state.resources.gold < 1 ? 1 : state.resources.gold),
+          stone: (state.resources.stone < 1 ? 1 : state.resources.stone),
+          wood: (state.resources.wood < 1 ? 1 : state.resources.wood)
         }
       };
     case actionTypes.SHELF:
@@ -83,10 +83,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          emmer: (state.resources['emmer'] < 2 ? 2 : state.resources['emmer']),
-          flax: (state.resources['flax'] < 2 ? 2 : state.resources['flax']),
-          stone: (state.resources['stone'] < 2 ? 2 : state.resources['stone']),
-          wood: (state.resources['wood'] < 2 ? 2 : state.resources['wood']),
+          emmer: (state.resources.emmer < 2 ? 2 : state.resources.emmer),
+          flax: (state.resources.flax < 2 ? 2 : state.resources.flax),
+          stone: (state.resources.stone < 2 ? 2 : state.resources.stone),
+          wood: (state.resources.wood < 2 ? 2 : state.resources.wood)
         }
       };
     case actionTypes.TUNNEL:
@@ -94,8 +94,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         resources: {
           ...state.resources,
-          food: (state.resources['food'] + 2 >= 9 ? 9 : state.resources['food'] + 2),
-          stone: (state.resources['stone'] < 3 ? state.resources['stone'] + 1 : state.resources['stone']),
+          food: (state.resources.food + 2 >= 9 ? 9 : state.resources.food + 2),
+          stone: (state.resources.stone < 3 ? state.resources.stone + 1 : state.resources.stone)
         }
       };
 

@@ -21,40 +21,40 @@ class CaveBoard extends Component {
     return (
       <Aux>
         <div className={classes.CaveBoard}>
-            <div>
-                <img src={caveBoard} alt="Player Cave Board" className={classes.CaveBoardBackgroundResponsiveImage} />
-            </div>
-            <div className={classes.RoomTileOne}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileTwo}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileThree}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileFour}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileFive}>
-                {/* Starts Empty */}
-            </div>
-            <div className={classes.RoomTileSix}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileSeven}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileEight}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileNine}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <div className={classes.RoomTileTen}>
-                <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
-            </div>
-            <ResourceTrack />
+          <div>
+            <img src={caveBoard} alt="Player Cave Board" className={classes.CaveBoardBackgroundResponsiveImage} />
+          </div>
+          <div className={classes.RoomTileOne}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileTwo}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileThree}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileFour}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileFive}>
+            {/* Starts Empty */}
+          </div>
+          <div className={classes.RoomTileSix}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileSeven}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileEight}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileNine}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <div className={classes.RoomTileTen}>
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+          </div>
+          <ResourceTrack />
         </div>
       </Aux>
     );

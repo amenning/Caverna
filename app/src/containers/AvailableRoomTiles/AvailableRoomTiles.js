@@ -19,7 +19,7 @@ class AvailableRoomTiles extends Component {
       <Aux>
         <div className={classes.AvailableRoomTiles}>
           <div>
-              <img src={availableRoomTilesBackground} alt="Available Tiles Background" className={classes.AvailableRoomTilesBackgroundResponsiveImage} />
+            <img src={availableRoomTilesBackground} alt="Available Tiles Background" className={classes.AvailableRoomTilesBackgroundResponsiveImage} />
           </div>
           <div className={classes.RoomTileOne}>
             <FoodCornerRoomTile />

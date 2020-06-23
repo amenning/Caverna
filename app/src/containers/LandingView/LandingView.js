@@ -11,7 +11,7 @@ import Button from '../../components/UI/Button/Button';
 class LandingView extends Component {
   state = {}
 
-  nextPath(path) {
+  nextPath (path) {
     this.props.history.push(path);
   }
 
@@ -19,8 +19,8 @@ class LandingView extends Component {
     return (
       <Aux>
         <div className={classes.LandingView}>
-            <CoverBox />
-            <Button btnType="Success" clicked={() => this.nextPath('/Game')}>Play</Button>
+          <CoverBox />
+          <Button btnType="Success" clicked={() => this.nextPath('/Game')}>Play</Button>
         </div>
       </Aux>
     );

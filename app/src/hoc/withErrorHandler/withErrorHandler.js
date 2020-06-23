@@ -4,7 +4,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux/Aux';
 
 const withErrorHandler = (WrappedComponent) => {
-  return class extends Component{
+  return class extends Component {
     state = {
       error: null
     }
@@ -13,7 +13,7 @@ const withErrorHandler = (WrappedComponent) => {
       this.setState({error: null});
     }
 
-    render() {
+    render () {
       return (
         <Aux>
           <Modal

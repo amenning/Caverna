@@ -9,7 +9,7 @@ import Game from './containers/Game/Game';
 import LandingView from './containers/LandingView/LandingView';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <HashRouter>
         <div className={classes.App}>

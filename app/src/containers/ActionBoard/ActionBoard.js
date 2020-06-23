@@ -47,7 +47,7 @@ class ActionBoard extends Component {
             <ExcavationActionTile />
           </div>
           <div className={classes.ActionTileFive}>
-              <ActionTile actionTileImage={masonryActionTile} actionTileImageAlt='masonry' />
+            <ActionTile actionTileImage={masonryActionTile} actionTileImageAlt='masonry' />
           </div>
           <div className={classes.ActionTileSix}>
             <ActionTile actionTileImage={furnishingActionTile} actionTileImageAlt='furnishing' />
@@ -59,7 +59,7 @@ class ActionBoard extends Component {
             <ActionTile actionTileImage={expansionActionTile} actionTileImageAlt='expansion' />
           </div>
           <div className={classes.ActionTileNine}>
-              <ActionTile actionTileImage={driftMiningActionTile} actionTileImageAlt='drift mining' />
+            <ActionTile actionTileImage={driftMiningActionTile} actionTileImageAlt='drift mining' />
           </div>
           <div className={classes.ActionTileTen}>
             <ActionTile actionTileImage={expeditionActionTile} actionTileImageAlt='expedition' />
