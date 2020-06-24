@@ -13,3 +13,7 @@
 .ActionTile:hover {
     transform: scale(3);
 }
+
+.ActionTile.ActiveOption img {
+    box-shadow: 8px 8px 8px rgb(63, 255, 0);
+}

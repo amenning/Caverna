@@ -17,6 +17,7 @@ class CultivationActionTile extends Component {
           actionTileImage={cultivationActionTile}
           actionTileImageAlt='cultivation'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

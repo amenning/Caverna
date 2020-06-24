@@ -35,16 +35,16 @@ class ActionBoard extends Component {
             <img src={actionBoardOnePlayer} alt="Action Board For One Player" className={classes.ActionBoardBackgroundResponsiveImage} />
           </div>
           <div className={classes.ActionTileOne}>
-            <HouseworkActionTile />
+            <HouseworkActionTile activeOption={true} />
           </div>
           <div className={classes.ActionTileTwo}>
-            <UndergrowthActionTile />
+            <UndergrowthActionTile activeOption={true} />
           </div>
           <div className={classes.ActionTileThree}>
-            <CultivationActionTile />
+            <CultivationActionTile activeOption={true} />
           </div>
           <div className={classes.ActionTileFour}>
-            <ExcavationActionTile />
+            <ExcavationActionTile activeOption={true} />
           </div>
           <div className={classes.ActionTileFive}>
             <ActionTile actionTileImage={masonryActionTile} actionTileImageAlt='masonry' />

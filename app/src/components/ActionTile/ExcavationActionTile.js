@@ -17,6 +17,7 @@ class ExcavationActionTile extends Component {
           actionTileImage={excavationActionTile}
           actionTileImageAlt='excavation'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

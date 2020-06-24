@@ -10,7 +10,11 @@ class HouseworkActionTile extends Component {
   render () {
     return (
       <Aux>
-        <ActionTile actionTileImage={houseworkActionTile} actionTileImageAlt='housework' />
+        <ActionTile
+          actionTileImage={houseworkActionTile}
+          actionTileImageAlt='housework'
+          activeOption={this.props.activeOption}
+        />
       </Aux>
     );
   }

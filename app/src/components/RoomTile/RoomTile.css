@@ -11,5 +11,5 @@
 }
 
 .RoomTile.ActiveOption img {
-    box-shadow: 8px 8px 8px rgba(50, 224, 64, 0.8);
+    box-shadow: 8px 8px 8px rgb(63, 255, 0);
 }

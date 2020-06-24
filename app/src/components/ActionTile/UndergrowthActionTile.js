@@ -17,6 +17,7 @@ class UndergrowthActionTile extends Component {
           actionTileImage={undergrowthActionTile}
           actionTileImageAlt='undergrowth'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );
