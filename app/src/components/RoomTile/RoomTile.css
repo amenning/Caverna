@@ -9,3 +9,7 @@
     border-radius: 5px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
 }
+
+.RoomTile.ActiveOption img {
+    box-shadow: 8px 8px 8px rgba(50, 224, 64, 0.8);
+}

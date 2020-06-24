@@ -25,7 +25,7 @@ class CaveBoard extends Component {
             <img src={caveBoard} alt="Player Cave Board" className={classes.CaveBoardBackgroundResponsiveImage} />
           </div>
           <div className={classes.RoomTileOne}>
-            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
+            <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' activeOption={true} />
           </div>
           <div className={classes.RoomTileTwo}>
             <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />

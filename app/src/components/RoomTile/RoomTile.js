@@ -5,9 +5,14 @@ import Aux from '../../hoc/Aux/Aux';
 
 class RoomTile extends Component {
   render () {
+    let classNames = classes.RoomTile;
+    if (this.props.activeOption) {
+      classNames += ' ' + classes.ActiveOption;
+    }
+
     return (
       <Aux>
-        <div className={classes.RoomTile} onClick={this.props.onClick}>
+        <div className={classNames} onClick={this.props.onClick}>
           <img src={this.props.roomTileImage} alt={this.props.roomTileImageAlt} />
         </div>
       </Aux>
