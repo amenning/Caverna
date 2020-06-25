@@ -37,6 +37,9 @@ build
 # *.iml
 # *.ipr
 
+# Java
+application.properties
+
 # CMake
 cmake-build-*/
 
