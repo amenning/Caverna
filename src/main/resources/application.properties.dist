@@ -1,0 +1,10 @@
+spring.jpa.database=POSTGRESQL
+spring.datasource.platform=postgres
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.datasource.initialization-mode=always
+spring.jpa.hibernate.ddl-auto=none
+
