@@ -16,7 +16,7 @@ class RoomTileTest extends AbstractDatabaseTestCase {
     private static final String MAIN_TEST_ROOM_NAME = "TEST ROOM NAME";
 
     @Test
-    void getRoomTileId() {
+    public void getRoomTileId() {
         RoomTile roomTile = new RoomTile(MAIN_TEST_ROOM_NAME);
 
         entityManager.persist(roomTile);
@@ -26,7 +26,7 @@ class RoomTileTest extends AbstractDatabaseTestCase {
     }
 
     @Test
-    void getRoomTileName() {
+    public void getRoomTileName() {
         RoomTile roomTile = new RoomTile(MAIN_TEST_ROOM_NAME);
 
         assertEquals(
@@ -41,7 +41,7 @@ class RoomTileTest extends AbstractDatabaseTestCase {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
         RoomTile roomTile = new RoomTile(MAIN_TEST_ROOM_NAME);
 
         entityManager.persist(roomTile);
