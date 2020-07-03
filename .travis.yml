@@ -1,0 +1,16 @@
+language: java
+
+addons:
+  sonarqube: true
+
+env:
+  - NODE_ENV=development
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database caverna;' -U postgres
+
+script:
+  - ./gradlew test
