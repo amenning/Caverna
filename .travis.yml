@@ -4,10 +4,12 @@ addons:
   sonarqube: true
 
 global:
-  - NODE_ENV=development
   - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/caverna
   - SPRING_DATASOURCE_USERNAME=caverna
   - SPRING_DATASOURCE_PASSWORD=
+
+env:
+  - NODE_ENV=development
 
 services:
   - postgresql
