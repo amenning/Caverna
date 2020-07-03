@@ -6,7 +6,7 @@ addons:
 env:
   global:
     - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/caverna
-    - SPRING_DATASOURCE_USERNAME=postgresql
+    - SPRING_DATASOURCE_USERNAME=postgres
     - SPRING_DATASOURCE_PASSWORD=
     - NODE_ENV=development
 
@@ -14,7 +14,7 @@ services:
   - postgresql
 
 before_script:
-  - psql -c 'create database caverna;' -U postgresql
+  - psql -c 'create database caverna;' -U postgres
 
 script:
   - ./gradlew test
