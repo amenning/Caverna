@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class CaveGraphTest extends AbstractTestCase {
     private final int EXPECTED_TOTAL_CAVE_NODES = 41;
     private final HashMap<Integer, CaveTileEnum> caveOccupancyMap = new HashMap<>();
+    private CaveGraph caveGraph;
 
     @BeforeEach
     public void setUp() {
@@ -57,6 +59,8 @@ public class CaveGraphTest extends AbstractTestCase {
         caveOccupancyMap.put(38, CaveTileEnum.WALL);
         caveOccupancyMap.put(39, CaveTileEnum.WALL);
         caveOccupancyMap.put(40, CaveTileEnum.WALL);
+
+        caveGraph = new CaveGraph(caveOccupancyMap);
     }
 
     @AfterEach
@@ -66,8 +70,6 @@ public class CaveGraphTest extends AbstractTestCase {
 
     @Test
     public void testCaveGraphCreatesCaveGraphWithAllNodes() {
-        CaveGraph caveGraph = new CaveGraph(caveOccupancyMap);
-
         assertNotNull(caveGraph);
         assertEquals(
             EXPECTED_TOTAL_CAVE_NODES,
@@ -76,6 +78,52 @@ public class CaveGraphTest extends AbstractTestCase {
                 "Expected new cave graph to have %d nodes but found %d",
                 EXPECTED_TOTAL_CAVE_NODES,
                 caveGraph.getCaveNodes().size()
+            )
+        );
+    }
+
+    @Test
+    public void testCaveGraphComposition() {
+        int wallNodeCount = 0;
+        int roomNodeCount = 0;
+
+        Map<Integer, CaveNode> caveNodes = caveGraph.getCaveNodes();
+        for (Map.Entry<Integer, CaveNode> caveNodeEntry : caveNodes.entrySet()) {
+            if (caveNodeEntry.getValue() instanceof CaveWallNode) {
+                ++wallNodeCount;
+            } else {
+                ++roomNodeCount;
+            }
+        }
+
+        int expectedRoomNodeCount = 11;
+        assertNodeCountForType(
+            expectedRoomNodeCount,
+            roomNodeCount,
+            CaveRoomNode.class.getSimpleName()
+        );
+
+        int expectedWallNodeCount = 30;
+        assertNodeCountForType(
+            expectedWallNodeCount,
+            wallNodeCount,
+            CaveWallNode.class.getSimpleName()
+        );
+    }
+
+    private void assertNodeCountForType(
+        int expectedNodeCount,
+        int actualNodeCount,
+        String nodeType
+    ) {
+        assertEquals(
+            expectedNodeCount,
+            actualNodeCount,
+            String.format(
+                "Expected to find %d %s nodes but instead found %d",
+                expectedNodeCount,
+                nodeType,
+                actualNodeCount
             )
         );
     }

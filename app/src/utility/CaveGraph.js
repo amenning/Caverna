@@ -131,10 +131,10 @@ class CaveGraph {
     this.caveRoomWallIndexMap.set(34, [29, 33, 35, 39]);
     this.caveRoomWallIndexMap.set(36, [30, 35, 37, 40]);
 
-    for (var caveRoomWallIndex of this.caveRoomWallIndexMap.keys()) {
-      let caveWallIndexes = this.caveRoomWallIndexMap.get(caveRoomWallIndex);
+    for (var caveRoomIndex of this.caveRoomWallIndexMap.keys()) {
+      let caveWallIndexes = this.caveRoomWallIndexMap.get(caveRoomIndex);
       this.associatedRoomNodeIndexWithWallNodeIndexes(
-        caveRoomWallIndex,
+        caveRoomIndex,
         caveWallIndexes
       );
     }
