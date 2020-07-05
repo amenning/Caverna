@@ -8,9 +8,9 @@ CREATE TABLE IF NOT EXISTS game (
     ,player_id INT NOT NULL REFERENCES player(player_id)
 );
 
-CREATE TABLE IF NOT EXISTS room_tile (
-     room_tile_id SERIAL PRIMARY KEY NOT NULL
-    ,room_tile_name CHAR(200) NOT NULL
+CREATE TABLE IF NOT EXISTS cave_tile (
+     cave_tile_id SERIAL PRIMARY KEY NOT NULL
+    ,cave_tile_name CHAR(200) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS cave (
@@ -22,5 +22,5 @@ CREATE TABLE IF NOT EXISTS cave (
 CREATE TABLE IF NOT EXISTS cave_location (
      cave_id INT NOT NULL REFERENCES cave(cave_id)
     ,cave_location_id INT NOT NULL
-    ,room_tile_id INT NOT NULL REFERENCES room_tile(room_tile_id)
+    ,cave_tile_id INT NOT NULL REFERENCES cave_tile(cave_tile_id)
 );

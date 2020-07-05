@@ -1,7 +1,7 @@
 package com.example.caverna;
 
-import com.example.caverna.entity.RoomTile;
-import com.example.caverna.repository.RoomTileRepository;
+import com.example.caverna.entity.CaveTile;
+import com.example.caverna.repository.CaveTileRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,14 +18,14 @@ public class CavernaApplication {
     }
 
     @Bean
-    public CommandLineRunner demo(RoomTileRepository repository) {
+    public CommandLineRunner demo(CaveTileRepository repository) {
         return (args) -> {
-            repository.save(new RoomTile("Test Room"));
+            repository.save(new CaveTile("Test Room"));
 
             // fetch all room tiles
             log.info("Room Tiles found with findAll():");
             log.info("-------------------------------");
-            for (RoomTile roomTile : repository.findAll()) {
+            for (CaveTile roomTile : repository.findAll()) {
                 log.info(roomTile.toString());
             }
         };
