@@ -55,6 +55,8 @@ public class CaveGraph {
         createCaveNodes();
 
         associatedRoomNodesWithWallNodes();
+
+        populateCaveNodesWithTiles();
     }
 
     public Map<Integer, CaveNode> getCaveNodes() {
@@ -113,6 +115,13 @@ public class CaveGraph {
             CaveNode wallNode = caveNodes.get(caveWallIndex);
             wallNode.addAdjacentNode(roomNode);
             roomNode.addAdjacentNode(wallNode);
+        }
+    }
+
+    private void populateCaveNodesWithTiles() {
+        for (Map.Entry<Integer, CaveTileEnum> caveOccupancyEntry : caveOccupancyMap.entrySet()) {
+            caveNodes.get(caveOccupancyEntry.getKey())
+                .markOccupiedWith(caveOccupancyEntry.getValue());
         }
     }
 }

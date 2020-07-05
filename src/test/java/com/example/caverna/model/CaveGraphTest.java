@@ -84,31 +84,44 @@ public class CaveGraphTest extends AbstractTestCase {
 
     @Test
     public void testCaveGraphComposition() {
-        int wallNodeCount = 0;
-        int roomNodeCount = 0;
-
-        Map<Integer, CaveNode> caveNodes = caveGraph.getCaveNodes();
-        for (Map.Entry<Integer, CaveNode> caveNodeEntry : caveNodes.entrySet()) {
-            if (caveNodeEntry.getValue() instanceof CaveWallNode) {
-                ++wallNodeCount;
-            } else {
-                ++roomNodeCount;
-            }
-        }
+        Map<String, Integer> nodeTypeCountMap = getNodeTypeCountMap();
 
         int expectedRoomNodeCount = 11;
         assertNodeCountForType(
             expectedRoomNodeCount,
-            roomNodeCount,
+            nodeTypeCountMap.get(CaveRoomNode.class.getSimpleName()),
             CaveRoomNode.class.getSimpleName()
         );
 
         int expectedWallNodeCount = 30;
         assertNodeCountForType(
             expectedWallNodeCount,
-            wallNodeCount,
+            nodeTypeCountMap.get(CaveWallNode.class.getSimpleName()),
             CaveWallNode.class.getSimpleName()
         );
+    }
+
+    private Map<String, Integer> getNodeTypeCountMap() {
+        Map<String, Integer> nodeTypeCountMap = new HashMap<>();
+        String caveWallNodeKey = CaveWallNode.class.getSimpleName();
+        String caveRoomNodeKey = CaveRoomNode.class.getSimpleName();
+
+        nodeTypeCountMap.put(caveWallNodeKey, 0);
+        nodeTypeCountMap.put(caveRoomNodeKey, 0);
+
+        Map<Integer, CaveNode> caveNodes = caveGraph.getCaveNodes();
+        int nodeCount;
+        for (Map.Entry<Integer, CaveNode> caveNodeEntry : caveNodes.entrySet()) {
+            if (caveNodeEntry.getValue() instanceof CaveWallNode) {
+                nodeCount = nodeTypeCountMap.get(caveWallNodeKey) + 1;
+                nodeTypeCountMap.put(caveWallNodeKey, nodeCount);
+            } else {
+                nodeCount = nodeTypeCountMap.get(caveRoomNodeKey) + 1;
+                nodeTypeCountMap.put(caveRoomNodeKey, nodeCount);
+            }
+        }
+
+        return nodeTypeCountMap;
     }
 
     private void assertNodeCountForType(
@@ -125,6 +138,36 @@ public class CaveGraphTest extends AbstractTestCase {
                 nodeType,
                 actualNodeCount
             )
+        );
+    }
+
+    @Test
+    public void testCaveNodeTileTypes() {
+        Map<Integer, CaveNode> caveNodes = caveGraph.getCaveNodes();
+
+        int occupiedCaveRoomCount = 0;
+        int occupiedCaveWallCount = 0;
+        for (Map.Entry<Integer, CaveNode> caveNodeEntry : caveNodes.entrySet()) {
+            CaveNode caveNode = caveNodeEntry.getValue();
+            if (caveNode instanceof CaveRoomNode && caveNode.isNodeOccupied()) {
+                ++occupiedCaveRoomCount;
+            } else if (caveNode instanceof CaveWallNode
+                && caveNode.isNodeOccupied()
+                && caveNode.getCaveTile() == CaveTileEnum.WALL
+            ) {
+                ++occupiedCaveWallCount;
+            }
+        }
+
+        assertNodeCountForType(
+            10,
+            occupiedCaveRoomCount,
+            "occupied " + CaveRoomNode.class.getSimpleName()
+        );
+        assertNodeCountForType(
+            15,
+            occupiedCaveWallCount,
+            "occupied " + CaveWallNode.class.getSimpleName()
         );
     }
 }
