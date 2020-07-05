@@ -10,8 +10,12 @@ import javax.annotation.PostConstruct;
 @SpringBootTest
 public abstract class AbstractTestCase {
     @PostConstruct
-    public abstract void onSetUp();
+    public void onSetUp() {
+
+    };
 
     @After
-    public abstract void onTearDown();
+    public void onTearDown() {
+
+    };
 }
