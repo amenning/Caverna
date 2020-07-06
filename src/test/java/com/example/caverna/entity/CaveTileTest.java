@@ -2,7 +2,6 @@ package com.example.caverna.entity;
 
 import com.example.caverna.AbstractDatabaseTestCase;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @SqlGroup({
-    @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/data/schema-test.sql"),
-    @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/data/data-test.sql"),
-    @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "/data/entity/afterCaveTileTest.sql")
+    //@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/data/schema-test.sql"),
+    //@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/data/data-test.sql"),
+    //@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "/data/entity/afterCaveTileTest.sql")
 })
 class CaveTileTest extends AbstractDatabaseTestCase {
     private static final String MAIN_TEST_CAVE_NAME = "TEST CAVE TILE NAME";

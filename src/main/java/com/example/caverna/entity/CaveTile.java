@@ -9,14 +9,14 @@ import javax.persistence.GenerationType;
 @Entity
 public class CaveTile {
     @Id
-    @SequenceGenerator(
-        name="cave_tile_cave_tile_id_seq",
-        sequenceName="cave_tile_cave_tile_id_seq",
-        allocationSize=1
-    )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator="cave_tile_cave_tile_id_seq"
+        generator="cave_tile_id_generator"
+    )
+    @SequenceGenerator(
+        name="cave_tile_id_generator",
+        sequenceName="cave_tile_cave_tile_id_seq",
+        allocationSize=1
     )
     private Long caveTileId;
     private String caveTileName;

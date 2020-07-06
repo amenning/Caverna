@@ -9,14 +9,14 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Player {
     @Id
-    @SequenceGenerator(
-        name="player_id_seq",
-        sequenceName="player_id_seq",
-        allocationSize=1
-    )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator="player_id_seq"
+        generator="player_id_generator"
+    )
+    @SequenceGenerator(
+        name="player_id_generator",
+        sequenceName="player_player_id_seq",
+        allocationSize=1
     )
     private Long playerId;
     private String firstName;
