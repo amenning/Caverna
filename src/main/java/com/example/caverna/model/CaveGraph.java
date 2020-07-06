@@ -1,5 +1,6 @@
 package com.example.caverna.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +48,8 @@ public class CaveGraph {
         24, 26,
         32, 34, 36
     };
+
+    private Integer caveEntranceCaveRoomIndex = 24;
 
     public CaveGraph(HashMap<Integer, CaveTileEnum> caveOccupancyMap) {
         this.caveOccupancyMap = caveOccupancyMap;
@@ -123,5 +126,43 @@ public class CaveGraph {
             caveNodes.get(caveOccupancyEntry.getKey())
                 .markOccupiedWith(caveOccupancyEntry.getValue());
         }
+    }
+
+    public ArrayList<CaveNode> getCaveRoomNodesThatCanBeExcavated() {
+        ArrayList<CaveNode> caveRoomNodesThatCanBeExcavated = new ArrayList<>();
+        Map<Integer, Boolean> visitedIndexes = new HashMap<>();
+        for (Map.Entry<Integer, CaveNode> caveNodes : caveNodes.entrySet()) {
+            visitedIndexes.put(caveNodes.getKey(), false);
+        };
+
+        Queue<CaveNode> queue = new Queue<>();
+        CaveNode caveEntrance = this.caveNodes.get(caveEntranceCaveRoomIndex);
+
+        visitedIndexes.put(caveEntranceCaveRoomIndex, true);
+        queue.add(caveEntrance);
+
+        while (!queue.isEmpty()) {
+            CaveNode caveNode = queue.remove();
+
+            ArrayList<CaveNode> adjacentCaveNodes = caveNode.getAdjacentNodes();
+
+            for (CaveNode adjacentCaveNode : adjacentCaveNodes) {
+                int adjacentCaveNodeIndex = adjacentCaveNode.getCaveNodeIndex();
+                if (!visitedIndexes.get(adjacentCaveNodeIndex)) {
+                    visitedIndexes.put(adjacentCaveNodeIndex, true);
+
+                    if (!adjacentCaveNode.isNodeOccupied()) {
+                        queue.add(adjacentCaveNode);
+                    } else if (
+                        adjacentCaveNode instanceof CaveRoomNode
+                        && adjacentCaveNode.getCaveTile() == CaveTileEnum.ROCK
+                    ) {
+                        caveRoomNodesThatCanBeExcavated.add(adjacentCaveNode);
+                    }
+                }
+            }
+        }
+
+        return caveRoomNodesThatCanBeExcavated;
     }
 }

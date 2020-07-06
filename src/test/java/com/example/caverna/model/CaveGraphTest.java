@@ -5,7 +5,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -168,6 +172,27 @@ public class CaveGraphTest extends AbstractTestCase {
             15,
             occupiedCaveWallCount,
             "occupied " + CaveWallNode.class.getSimpleName()
+        );
+    }
+
+    @Test
+    public void testGetCaveRoomNodesThatCanBeExcavated() {
+        ArrayList<CaveNode> excavatableCaveRoomNodes = caveGraph.getCaveRoomNodesThatCanBeExcavated();
+
+        assertEquals(4, excavatableCaveRoomNodes.size());
+
+        List<Integer> expectedCaveRoomNodeIndexes = Arrays.asList(10, 19, 26, 32);
+        List<Integer> actualCaveRoomNodeIndexes = new ArrayList<>();
+
+        excavatableCaveRoomNodes.stream()
+            .forEach(caveNode -> {
+                actualCaveRoomNodeIndexes.add(caveNode.getCaveNodeIndex());
+            });
+        Collections.sort(actualCaveRoomNodeIndexes);
+
+        assertEquals(
+            expectedCaveRoomNodeIndexes,
+            actualCaveRoomNodeIndexes
         );
     }
 }
