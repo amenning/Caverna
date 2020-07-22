@@ -17,6 +17,7 @@ class SpinningWheelRoomTile extends Component {
           roomTileImage={spinningWheelRoomTile}
           roomTileImageAlt='spinning wheel room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

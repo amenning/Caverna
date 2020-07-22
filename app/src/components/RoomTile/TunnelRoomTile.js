@@ -17,6 +17,7 @@ class TunnelRoomTile extends Component {
           roomTileImage={tunnelRoomTile}
           roomTileImageAlt='tunnel room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

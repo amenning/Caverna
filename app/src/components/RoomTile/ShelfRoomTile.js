@@ -17,6 +17,7 @@ class ShelfRoomTile extends Component {
           roomTileImage={shelfRoomTile}
           roomTileImageAlt='shelf room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

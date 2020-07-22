@@ -17,6 +17,7 @@ class CaveEntranceRoomTile extends Component {
           roomTileImage={caveEntrance}
           roomTileImageAlt='cave entrance room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

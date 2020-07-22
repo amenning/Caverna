@@ -4,6 +4,12 @@ import classes from './RoomTile.css';
 import Aux from '../../hoc/Aux/Aux';
 
 class RoomTile extends Component {
+  activateRoomTile = () => {
+    if (this.props.activeOption) {
+      this.props.onClick();
+    }
+  }
+
   render () {
     let classNames = classes.RoomTile;
     if (this.props.activeOption) {
@@ -12,7 +18,7 @@ class RoomTile extends Component {
 
     return (
       <Aux>
-        <div className={classNames} onClick={this.props.onClick}>
+        <div className={classNames} onClick={this.activateRoomTile}>
           <img src={this.props.roomTileImage} alt={this.props.roomTileImageAlt} />
         </div>
       </Aux>

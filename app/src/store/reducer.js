@@ -1,4 +1,5 @@
 import * as actionTypes from './actions';
+import * as phaseTypes from './phases';
 
 const initialState = {
   resources: {
@@ -9,6 +10,10 @@ const initialState = {
     stone: 1,
     wood: 1
   },
+  round: 1,
+  phase: phaseTypes.SELECT_NEW_ACTION,
+  remainingActions: 2,
+  orangeRoomActions: 0,
   status: {
     message: 'Welcome to Caverna - Solo Mode.\nPlease click on any action tile to begin round 1 of 7'
   }

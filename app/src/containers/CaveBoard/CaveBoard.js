@@ -44,7 +44,7 @@ class CaveBoard extends Component {
             <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />
           </div>
           <div className={classes.RoomTileSeven}>
-            <CaveEntranceRoomTile />
+            <CaveEntranceRoomTile activeOption={true} />
           </div>
           <div className={classes.RoomTileEight}>
             <RoomTile roomTileImage={grayRoomTileBack} roomTileImageAlt='test' />

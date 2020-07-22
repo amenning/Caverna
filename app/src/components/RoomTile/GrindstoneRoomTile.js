@@ -17,6 +17,7 @@ class GrindstoneRoomTile extends Component {
           roomTileImage={grindstoneRoomTile}
           roomTileImageAlt='grindstone room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

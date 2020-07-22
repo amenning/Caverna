@@ -17,6 +17,7 @@ class ParlorRoomTile extends Component {
           roomTileImage={parlorRoomTile}
           roomTileImageAlt='parlor room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );

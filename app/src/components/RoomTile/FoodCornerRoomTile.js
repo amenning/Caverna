@@ -17,6 +17,7 @@ class FoodCornerRoomTile extends Component {
           roomTileImage={foodCornerRoomTile}
           roomTileImageAlt='food corner room tile'
           onClick={this.props.onTakeAction}
+          activeOption={this.props.activeOption}
         />
       </Aux>
     );
