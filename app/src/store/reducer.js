@@ -44,6 +44,17 @@ const reducer = (state = initialState, action) => {
       };
 
     // Room Tiles
+    case actionTypes.CAVE_ENTRANCE:
+      return {
+        ...state,
+        resources: {
+          ...state.resources,
+          wood: (state.resources.wood + 1 >= 9 ? 9 : state.resources.wood + 1),
+          stone: (state.resources.stone + 1 >= 9 ? 9 : state.resources.stone + 1),
+          emmer: (state.resources.emmer + 1 >= 9 ? 9 : state.resources.emmer + 1),
+          flax: (state.resources.flax + 1 >= 9 ? 9 : state.resources.flax + 1)
+        }
+      };
     case actionTypes.FOOD_CORNER:
       return {
         ...state,

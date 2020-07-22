@@ -10,3 +10,4 @@ export const PARLOR = 'PARLOR';
 export const SHELF = 'SHELF';
 export const SPINNING_WHEEL = 'SPINNING WHEEL';
 export const TUNNEL = 'TUNNEL';
+export const CAVE_ENTRANCE = 'CAVE ENTRANCE';

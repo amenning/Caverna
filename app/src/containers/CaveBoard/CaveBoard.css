@@ -66,24 +66,31 @@
     position: absolute;
     width: 24%;
     top: 62%;
-    left: 31%;
+    left: 3%;
 }
 
 .RoomTileEight {
     position: absolute;
     width: 24%;
-    top: 79%;
-    left: 5%;
+    top: 62%;
+    left: 31%;
 }
 
 .RoomTileNine {
     position: absolute;
     width: 24%;
     top: 79%;
-    left: 31%;
+    left: 5%;
 }
 
 .RoomTileTen {
+    position: absolute;
+    width: 24%;
+    top: 79%;
+    left: 31%;
+}
+
+.RoomTileEleven {
     position: absolute;
     width: 24%;
     top: 79%;
