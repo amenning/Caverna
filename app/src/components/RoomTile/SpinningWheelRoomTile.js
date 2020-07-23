@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import classes from './RoomTile.css';
-import RoomTile from './RoomTile';
+import OrangeRoomTile from './OrangeRoomTile';
 
 import spinningWheelRoomTile from '../../assets/images/RoomTiles/StartingRooms/SpinningWheel.jpg';
 import Aux from '../../hoc/Aux/Aux';
@@ -13,7 +12,7 @@ class SpinningWheelRoomTile extends Component {
   render () {
     return (
       <Aux>
-        <RoomTile
+        <OrangeRoomTile
           roomTileImage={spinningWheelRoomTile}
           roomTileImageAlt='spinning wheel room tile'
           onClick={this.props.onTakeAction}

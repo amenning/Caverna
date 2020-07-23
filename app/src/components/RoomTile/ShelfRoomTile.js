@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import classes from './RoomTile.css';
-import RoomTile from './RoomTile';
+import OrangeRoomTile from './OrangeRoomTile';
 
 import shelfRoomTile from '../../assets/images/RoomTiles/StartingRooms/Shelf.jpg';
 import Aux from '../../hoc/Aux/Aux';
@@ -13,7 +12,7 @@ class ShelfRoomTile extends Component {
   render () {
     return (
       <Aux>
-        <RoomTile
+        <OrangeRoomTile
           roomTileImage={shelfRoomTile}
           roomTileImageAlt='shelf room tile'
           onClick={this.props.onTakeAction}
