@@ -11,7 +11,7 @@
 .StatusBar {
     margin-bottom: 40px;
     min-width: 90%;
-    height: 80px;
+    height: 100px;
     background-color: #487030;
     border-radius: 5px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
