@@ -17,7 +17,7 @@ class StatusBar extends Component {
 
     switch (this.props.phase) {
       case (phaseTypes.SELECT_NEW_ACTION):
-        phaseMessage = <p>You have {this.props.remainingActions} actions this round. Select an action tile</p>;
+        phaseMessage = <p>You have {this.props.remainingActions} remaining action(s) this round. Select another action tile</p>;
         break;
       case (phaseTypes.NEW_ROUND):
         phaseMessage = <p>Start of Round {this.props.round} of 7. You have {this.props.remainingActions} actions this round. Select any available action tile.</p>;
